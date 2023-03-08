@@ -1,0 +1,22 @@
+{
+  "name": "tce-local",
+  "version": "1.0.0",
+  "description": "lo que sea",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArturoGlz/tce-local.git"
+  },
+  "keywords": [
+    "tanzu"
+  ],
+  "author": "otro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArturoGlz/tce-local/issues"
+  },
+  "homepage": "https://github.com/ArturoGlz/tce-local#readme"
+}
