@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/ArturoGlz/tce-local/issues"
   },
-  "homepage": "https://github.com/ArturoGlz/tce-local#readme"
+  "homepage": "https://github.com/ArturoGlz/tce-local#readme",
+  "publishConfig": {
+   "@ArturoGlz:registry": "https://npm.pkg.github.com"
+ }
 }
