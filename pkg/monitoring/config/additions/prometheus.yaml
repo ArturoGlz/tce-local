@@ -1,0 +1,26 @@
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+  name: prometheus
+  annotations:
+    kapp.k14s.io/change-group: "tce-local/prometheus"
+spec:
+  packageRef:
+    refName: prometheus.community.tanzu.vmware.com
+    versionSelection:
+      constraints: ">0.0.0"
+      prereleases: {}
+  serviceAccountName: local-monitoring-default-sa
+  values:
+  - secretRef:
+      name: prometheus-pkg-values
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: prometheus-pkg-values
+  annotations:
+    kapp.k14s.io/change-group: "tce-local/prometheus"
+type: Opaque
+stringData:
+  values.yml:

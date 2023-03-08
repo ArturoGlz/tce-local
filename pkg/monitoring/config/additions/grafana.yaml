@@ -1,0 +1,26 @@
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+  name: grafana
+  annotations:
+    kapp.k14s.io/change-group: "tce-local/grafana"
+spec:
+  packageRef:
+    refName: grafana.community.tanzu.vmware.com
+    versionSelection:
+      constraints: ">0.0.0"
+      prereleases: {}
+  serviceAccountName: local-monitoring-default-sa
+  values:
+  - secretRef:
+      name: grafana-pkg-values
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: grafana-pkg-values
+  annotations:
+    kapp.k14s.io/change-group: "tce-local/grafana"
+type: Opaque
+stringData:
+  values.yml:
